@@ -50,12 +50,12 @@ with st.expander("📤 上傳圖片與標註資料", expanded=True):
 if len(os.listdir(upload_dir)) != 0:
     st.markdown("---")
     st.subheader("⚙️ 資料集轉換參數")
-
+    val_percent =0
     col1, col2 = st.columns(2)
     with col1:
         output_name = st.text_input("📂 輸出資料集名稱", value="yolo_train_data")
     with col2:
-        cval_mode = st.radio("📋 驗證集選擇方式", ["隨機分割", "手動勾選"])
+        val_mode = st.radio("📋 驗證集選擇方式", ["隨機分割", "手動勾選"])
     if val_mode == "隨機分割":
         with col2:
             val_percent = st.slider("📊 驗證集比例（隨機）", 0.05, 0.5, 0.2, step=0.05)

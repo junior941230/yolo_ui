@@ -37,7 +37,7 @@ def augment_image_and_labels(name, img_src, label_src, dst_img_dir, dst_label_di
 
     # 增強張數
     augmentations = augment_times if augment else 1
-
+    print(augmentations)
     for i in range(augmentations):
         if augment:
             augmented = transform(image=image, bboxes=bboxes, class_labels=class_labels)
@@ -121,7 +121,7 @@ def convert_data_set(output_name="yolo_train_data", augment=True,
         f.write(", ".join(f"'{cls}'" for cls in class_names))
         f.write("]\n")
 
-    train_sample_count = len(train_files) * (4 if augment else 1)
+    train_sample_count = len(train_files) * (augment_times if augment else 1)
     print(
         f"✅ 完成！已建立 YOLOv8 資料集（train {'含增強' if augment else '無增強'}，val 無擴增）於 {output_dir}")
     print(f"📂 訓練樣本數：{train_sample_count}")
