@@ -1,7 +1,6 @@
 import streamlit as st
 import os, shutil
 import subprocess
-from pathlib import Path
 from ultralytics import YOLO
 
 # 設定頁面

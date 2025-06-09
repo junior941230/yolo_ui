@@ -1,6 +1,6 @@
-__pycache__
-venv
-runs
-temp
-temp_data
-datasets
+__pycache__/
+venv/
+runs/
+temp/
+temp_data/
+datasets/
