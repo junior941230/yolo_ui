@@ -63,7 +63,7 @@ if st.button("🚀 開始訓練 YOLO 模型"):
     conf_matrix_path = os.path.join(run_output_root, result_name, "confusion_matrix_normalized.png")
     if os.path.exists(conf_matrix_path):
         st.markdown("### 📊 混淆矩陣")
-        st.image(Image.open(conf_matrix_path), caption="Normalized Confusion Matrix", use_column_width=True)
+        st.image(Image.open(conf_matrix_path), caption="Normalized Confusion Matrix", use_container_width=True)
     else:
         st.warning("⚠️ 找不到混淆矩陣圖，可能是 Epoch 太少或訓練中未產生。")
 
